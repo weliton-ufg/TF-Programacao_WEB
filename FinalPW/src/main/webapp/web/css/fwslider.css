@@ -105,13 +105,13 @@ body > div.images-slider {
 }
 #fwslider .title {  /* Slider Title Style */
 	font-family: 'Open Sans', 'sans-serif';
-	color: #fff;
+	color: #c2c2c2;
 	font-size:4em;
 	padding:5px 20px 0;
 	margin-top:200px; 
 	font-style: normal;
 	font-weight: 700;
-	border:none;
+	border:black;
 	text-shadow: 2px 2px black;
 	text-align:center;
 }
