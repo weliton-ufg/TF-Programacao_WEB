@@ -8,6 +8,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 .body{
 	font-family: 'Open Sans', 'sans-serif';
 }
+
+.fbLogin{
+	margin-left: 100%;
+	margin-top: 1%;
+	margin-bottom: 7%;
+}
+
 .menu {
 	margin-top: 2%;
 	width: 50%;
@@ -22,7 +29,7 @@ div.logo {
 }
 .header-bg{
 	background:#333;
-	padding: -1% 0;
+	padding: 1% 0;
 }
 .navbar-default {
 	background-color: #333;

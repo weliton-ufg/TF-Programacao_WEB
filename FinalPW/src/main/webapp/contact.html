@@ -25,7 +25,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</head>
 	<body>
 		<!----start-container----->
-<div class="navbar navbar-fixed-top">
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '1577814659163295',
+		      xfbml      : true,
+		      version    : 'v2.3'
+		    });
+		  };
+		
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/pt_BR/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+
+		<!----start-container----->
+		<div class="navbar navbar-fixed-top">
 		<div class="header-bg">
 			<div class="container">
 				<div class="row">
@@ -64,20 +83,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						        <li><a href="contact.html">Contato</a></li>
 						      </ul>							      					    					      
 						    </div><!-- /.navbar-collapse -->
-						  </div><!-- /.container-fluid -->
+						  </div><!-- /.container-fluid -->						
+						
 						</nav>
-						<div class="right">
-							<!-- <ul class="list-unstyled">
-								<li class="a text-left"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a> $2,534,5435</li>
-								<li><a href="#">Checkout</a></li>								
-							</ul> -->							
-						</div>	
 					</div>
 					<!----start-images-slider---->	
 				  <!-- Single button -->
       
 				</div>
 			</div>
+			<div class="fbLogin">
+				<div class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></div>							
+			</div>	
         </div>
         </div>	
        <div class="container">

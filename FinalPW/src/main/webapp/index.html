@@ -32,15 +32,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</head>
 	<body>
 	
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.3";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '1577814659163295',
+		      xfbml      : true,
+		      version    : 'v2.3'
+		    });
+		  };
+		
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/pt_BR/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
 
 		<!----start-container----->
 		<div class="navbar navbar-fixed-top">
@@ -51,7 +59,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>
 					</div>
 					<div class="col-md-8">					
-	 					<nav class="navbar navbar-default" role="navigation">
+	 					<nav class="navbar navbar-inverse" role="navigation">
 						  <div class="container-fluid">
 						    <!-- Brand and toggle get grouped for better mobile display -->
 						    <div class="navbar-header"><span class="text-left"><a href="#">MENU</a></span>
@@ -80,19 +88,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						        <li><a href="about.html">Sobre</a></li>
 						        <li><a href="blog.html">OutraPágina</a></li>
 						        <li><a href="contact.html">Contato</a></li>
-						      </ul>							      					    					      
+						      </ul>
+						      <div class="fbLogin">
+						      <ul class="nav navbar-nav navbar-right">
+								<li class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></li>							
+							  </ul>
+							  </div>
 						    </div><!-- /.navbar-collapse -->
-						  </div><!-- /.container-fluid -->
-						  
-						  <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
-						
+						  </div><!-- /.container-fluid -->						
 						</nav>
-						<div class="right">
-							<!-- <ul class="list-unstyled">
-								<li class="a text-left"><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a> $2,534,5435</li>
-								<li><a href="#">Checkout</a></li>								
-							</ul> -->							
-						</div>	
 					</div>
 					<!----start-images-slider---->	
 				  <!-- Single button -->
@@ -151,6 +155,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  		<h2>Restaurantes em Destaque</h2>
  	</div>	
  </div>	
+
 <div class="row">
 				<div class="col-md-2">
 					<div class="grid">
