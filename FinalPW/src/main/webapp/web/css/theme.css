@@ -27,7 +27,7 @@ div.logo {
 .navbar-default {
 	background-color: #333;
 	border-color: #333;
-	width: 50%;
+	width: 60%;
 	float: left;
 }
 .navbar-default .navbar-nav > li > a {
@@ -435,7 +435,7 @@ div.grid1.pull-left p a:hover {
 	width: 100%;
 }
 .main{
-	padding:10% 0 6%;
+	padding:13% 0 6%;
 }
 div.col-md-12 p {
 	margin: 2%;

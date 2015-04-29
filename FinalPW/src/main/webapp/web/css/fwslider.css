@@ -6,6 +6,11 @@ body > div.images-slider {
     position: relative;
     width:100%;
 }
+
+.teste{
+	-webkit-filter: blur(2px);
+	filter: blur(2px);
+}
 #fwslider .slide {
     display: none;
     position: absolute;
@@ -105,14 +110,14 @@ body > div.images-slider {
 }
 #fwslider .title {  /* Slider Title Style */
 	font-family: 'Open Sans', 'sans-serif';
-	color: #c2c2c2;
+	color: white;
 	font-size:4em;
 	padding:5px 20px 0;
 	margin-top:200px; 
 	font-style: normal;
-	font-weight: 700;
+	font-weight: 800;
 	border:black;
-	text-shadow: 2px 2px black;
+	text-shadow: 3px 3px 7px black;
 	text-align:center;
 }
 #fwslider .description { /* Slider Description Style */
