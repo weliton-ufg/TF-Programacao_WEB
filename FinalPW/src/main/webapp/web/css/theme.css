@@ -9,10 +9,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	font-family: 'Open Sans', 'sans-serif';
 }
 
-.fbLogin{
+.Login{
 	margin-left: 100%;
-	margin-top: 1%;
-	margin-bottom: 7%;
+	margin-top: -10%;
+	margin-bottom: 0%;
 }
 
 .menu {
@@ -24,7 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	width: 100%;
 }
 div.logo {
-    padding:2% 0 0 0;
+    padding:0 0 0 0;
 	float: left;
 }
 .header-bg{
@@ -442,6 +442,7 @@ div.grid1.pull-left p a:hover {
 	width: 100%;
 }
 .main{
+	margin-top: 5%;
 	padding:13% 0 6%;
 }
 div.col-md-12 p {
@@ -465,7 +466,7 @@ div.col-sm-10 textarea {
 	-o-border-radius: 4px;
 	-ms-border-radius: 4px;
 }
-.btn {
+/* .btn {
 	font-family: 'Open Sans', 'sans-serif';
 	padding: 12px 30px;
 	font-size: 1.1em;
@@ -476,7 +477,7 @@ div.col-sm-10 textarea {
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
 	transition: all 0.3s ease-in-out;
-}
+} */
 div.col-md-12.text-center h2 {
 	padding-bottom: 3%;
 }
