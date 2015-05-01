@@ -94,5 +94,50 @@
 			</div>
         </div>
         </div>
+        
+        <div class="container-fluid" style="margin-top: 15%;">
+	        <div class="container-fluid row" style="margin-top: 5%;">
+	        	<div style="margin-left: 13%;" class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+	        </div>
+	        
+	        <div class="container-fluid">
+	        	<div class="form-group row">
+	        		<form style="margin-top: 5%;">
+	        			<div class="col-xs-2">
+		        			<label for="usr">Nome</label>
+		        			<input type="text" class="form-control">
+	        			</div>
+	        			
+	        			<div class="col-xs-2">
+		        			<label for="usr">Sobrenome</label>
+		        			<input type="text" class="form-control">
+	        			</div>
+	        		</form>
+	        	</div>
+	        	
+	        	<div class="form-group row">
+	        		<form style="margin-top: 5%;">
+	        			<div class="col-xs-2">
+		        			<label for="usr">Email</label>
+		        			<input type="text" class="form-control">
+	        			</div>
+	        		</form>
+	        	</div>
+	        	
+	        	<div class="form-group row">
+	        		<form style="margin-top: 5%;">
+	        			<div class="col-xs-2">
+		        			<label for="usr">Senha</label>
+		        			<input type="text" class="form-control">
+	        			</div>
+	        			
+	        			<div class="col-xs-2">
+		        			<label for="usr">Repetir senha</label>
+		        			<input type="text" class="form-control">
+	        			</div>
+	        		</form>
+	        	</div>
+	        </div>
+        </div>
     </body>
 </html>
