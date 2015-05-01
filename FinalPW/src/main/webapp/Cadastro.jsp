@@ -95,49 +95,78 @@
         </div>
         </div>
         
-        <div class="container-fluid" style="margin-top: 15%;">
-	        <div class="container-fluid row" style="margin-top: 5%;">
-	        	<div style="margin-left: 13%;" class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
-	        </div>
+        <div class="container-fluid" style="margin-top: 15%; margin-left: 5%; margin-bottom: 15%;">
 	        
-	        <div class="container-fluid">
-	        	<div class="form-group row">
-	        		<form style="margin-top: 5%;">
-	        			<div class="col-xs-2">
-		        			<label for="usr">Nome</label>
-		        			<input type="text" class="form-control">
-	        			</div>
-	        			
-	        			<div class="col-xs-2">
-		        			<label for="usr">Sobrenome</label>
-		        			<input type="text" class="form-control">
-	        			</div>
-	        		</form>
-	        	</div>
-	        	
-	        	<div class="form-group row">
-	        		<form style="margin-top: 5%;">
-	        			<div class="col-xs-2">
-		        			<label for="usr">Email</label>
-		        			<input type="text" class="form-control">
-	        			</div>
-	        		</form>
-	        	</div>
-	        	
-	        	<div class="form-group row">
-	        		<form style="margin-top: 5%;">
-	        			<div class="col-xs-2">
-		        			<label for="usr">Senha</label>
-		        			<input type="text" class="form-control">
-	        			</div>
-	        			
-	        			<div class="col-xs-2">
-		        			<label for="usr">Repetir senha</label>
-		        			<input type="text" class="form-control">
-	        			</div>
-	        		</form>
-	        	</div>
-	        </div>
+		        <div class="container-fluid row alert alert-warning col-xs-3" style="margin-top: 5%; margin-left: 4%;">
+		        	<div style="margin-left: 33%;" class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+		        	<p style="text-align: center;">A maneira mais fácil de se cadastrar</p>
+		        </div>
+		        
+		        
+		        <div class="container-fluid col-md-12">
+		        	<div class="form-group row">
+		        		<form style="margin-top: 5%;">
+		        			<div class="col-xs-2">
+			        			<label for="usr">Nome</label>
+			        			<input type="text" class="form-control">
+		        			</div>
+		        			
+		        			<div class="col-xs-2">
+			        			<label for="usr">Sobrenome</label>
+			        			<input type="text" class="form-control">
+		        			</div>
+		        		</form>
+		        	</div>
+		        	
+		        	<div class="form-group row">
+		        		<form style="margin-top: 5%;">
+		        			<div class="col-xs-2">
+			        			<label for="usr">Email</label>
+			        			<input type="email" class="form-control">
+		        			</div>
+		        		</form>
+		        	</div>
+		        	
+		        	<div class="form-group row">
+		        		<form style="margin-top: 5%;">
+		        			<div class="col-xs-2">
+			        			<label for="usr">Senha</label>
+			        			<input type="password" class="form-control">
+		        			</div>
+		        			
+		        			<div class="col-xs-2">
+			        			<label for="usr">Repetir senha</label>
+			        			<input type="password" class="form-control">
+		        			</div>
+		        		</form>
+		        	</div>
+		        </div>
         </div>
+        
+        
+        <div class="footer">
+	<div class="container">
+		 <div class="row">
+		 	<div class="col-md-12">
+		 		<ul class="list-inline pull-left">
+		 			<li><a href="#">Terms of Services</a></li>
+		 			<li><a href="#">Refunds</a></li>
+		 			<li><a href="#">Privacy Policy</a></li>
+		 			<li><a href="#">Blog</a></li>
+		 			<li><a href="#">Contato</a></li>
+		 		</ul>
+		 		<!-- <form class="navbar-form pull-right" role="search">
+			        <div class="form-group">
+			        <input type="text" class="form-control" placeholder="Search">
+			        </div>
+			        <button type="Find" class="btn btn-default">Find</button>
+			    </form> -->
+		 	</div>	
+		 </div>	
+		 <div class="copy-right text-center">
+			<p>&#169Copyright 2014 All Rights Reserved  Template <a href="http://w3layouts.com/">  w3layouts.com</a></p>	
+		</div>
+	</div>
+</div>
     </body>
 </html>

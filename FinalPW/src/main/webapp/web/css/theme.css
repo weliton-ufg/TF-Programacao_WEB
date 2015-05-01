@@ -15,6 +15,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	margin-bottom: 0%;
 }
 
+.container-login{
+	border: 2px solid black;
+	margin-botton: 5%;
+}
+
 .menu {
 	margin-top: 2%;
 	width: 50%;
@@ -445,6 +450,7 @@ div.grid1.pull-left p a:hover {
 	margin-top: 5%;
 	padding:13% 0 6%;
 }
+
 div.col-md-12 p {
 	margin: 2%;
 }
