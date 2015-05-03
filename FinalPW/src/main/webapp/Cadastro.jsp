@@ -150,9 +150,7 @@
 		 	<div class="col-md-12">
 		 		<ul class="list-inline pull-left">
 		 		<li><a href="#">Termos de serviço</a></li>
-		 			<li><a href="#">Reembolso</a></li>
 		 			<li><a href="#">Política de Privacidade</a></li>
-		 			<li><a href="#">Blog</a></li>
 		 			<li><a href="#">Contato</a></li>
 		 		</ul>
 		 		<!-- <form class="navbar-form pull-right" role="search">
