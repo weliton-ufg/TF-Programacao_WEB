@@ -95,15 +95,21 @@
         </div>
         </div>
         
+        <!--Cadastre-se-->
         <div class="container-fluid" style="margin-top: 15%; margin-left: 5%; margin-bottom: 15%;">
 	        
 		        <div class="container-fluid row alert alert-warning col-xs-3" style="margin-top: 5%; margin-left: 4%;">
 		        	<div style="margin-left: 33%;" class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 		        	<p style="text-align: center;">A maneira mais fácil de se cadastrar</p>
+		 
 		        </div>
 		        
+		    
 		        
 		        <div class="container-fluid col-md-12">
+		        	<div class="container-fluid" style="margin-left: 14%;">
+		        		<strong>Ou</strong>
+		        	</div>
 		        	<div class="form-group row">
 		        		<form style="margin-top: 5%;">
 		        			<div class="col-xs-2">
@@ -140,9 +146,14 @@
 		        			</div>
 		        		</form>
 		        	</div>
+		        	
+		        	
+		        	<div class="container-fluid" style="margin-top: 5%; margin-left: 10%;">
+		        		<button type="submit" class="btn btn-default btn-lg">Cadastrar-se</button>
+		        	</div>
 		        </div>
+   
         </div>
-        
         
         <div class="footer">
 	<div class="container">
