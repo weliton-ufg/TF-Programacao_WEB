@@ -96,86 +96,98 @@
         </div>
         
         <!--Cadastre-se-->
-        <div class="container-fluid" style="margin-top: 15%; margin-left: 5%; margin-bottom: 15%;">
-	        
-		        <div class="container-fluid row alert alert-warning col-xs-3" style="margin-top: 5%; margin-left: 4%;">
-		        	<div style="margin-left: 33%;" class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
-		        	<p style="text-align: center;">A maneira mais fácil de se cadastrar</p>
-		 
+        <div class="main">
+	       <div class="container"> 
+	       		<div class="row">
+	       			<div class="col-md-6" style="border-right: 1px solid #4B5456;">
+	       				<div class="alert alert-warning">
+				        	<div class="fb-login-button text-center" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+				        	<p class="text-center">A maneira mais fácil de se cadastrar</p>
+				        </div>
+				        <div style="margin-top:3%; margin-bottom:3%; border: 1px solid #4B5456;"></div>
+				        <form action="" class="form-group">
+				        	<div class="row">
+					        	<div class="col-md-6">
+					        		<label for="nome">Nome</label>
+					        		<input type="text" class="form-control" name="nome">
+					        	</div>
+					        	<div class="col-md-6">
+					        		<label for="unome">Sobrenome</label>
+					        		<input type="text" class="form-control" name="unome"> 
+					        	</div>
+					        </div>
+				        	<div class="row">
+				        		<div class="col-md-6">
+				        			<label for="email">Email</label>
+				        			<input type="text" class="form-control" name="email">
+				        		</div>
+				        	</div>
+				        	<div class="row">
+					        	<div class="col-md-6">
+					        		<label for="senha">Senha</label>
+					        		<input type="password" class="form-control" name="senha">
+					        	</div>
+					        	<div class="col-md-6">
+					        		<label for="rsenha">Repita a senha</label>
+					        		<input type="password" class="form-control" name="rsenha"> 
+					        	</div>
+					        </div>
+					        <div class="row">
+				        		<div class="col-md-6 col-md-offset-3">
+				        			<input type="submit" class="form-control btn btn-primary" value="Cadastre-se Já!">
+				        		</div>
+				        	</div>
+				        </form>
+	       			</div>
+	       			<div class="col-md-5 col-md-offset-1">
+		        		<div class="alert alert-warning ">
+				        	<div class="fb-login-button text-center" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+				        	<p class="text-center">Faça seu login!</p>
+				        </div>
+				        <div style="margin-top:3%; margin-bottom:3%; border: 1px solid #4B5456;"></div>
+				        <form action="" class="form-group">
+				        	<div class="row">
+					        	<div class="col-md-11">
+					        		<label for="email">Email</label>
+					        		<input type="text" class="form-control" name="email">
+					        	</div>
+					        	<div class="col-md-11">
+					        		<label for="seha">Senha</label>
+					        		<input type="text" class="form-control" name="senha"> 
+					        	</div>
+					        </div>
+					       
+					        <div class="row">
+				        		<div class="col-md-6 col-md-offset-3">
+				        			<input type="submit" class="form-control btn btn-success" value="Login!">
+				        		</div>
+				        	</div>
+		        	</div>
 		        </div>
-		        
-		    
-		        
-		        <div class="container-fluid col-md-12">
-		        	<div class="container-fluid" style="margin-left: 14%;">
-		        		<strong>Ou</strong>
-		        	</div>
-		        	<div class="form-group row">
-		        		<form style="margin-top: 5%;">
-		        			<div class="col-xs-2">
-			        			<label for="usr">Nome</label>
-			        			<input type="text" class="form-control">
-		        			</div>
-		        			
-		        			<div class="col-xs-2">
-			        			<label for="usr">Sobrenome</label>
-			        			<input type="text" class="form-control">
-		        			</div>
-		        		</form>
-		        	</div>
-		        	
-		        	<div class="form-group row">
-		        		<form style="margin-top: 5%;">
-		        			<div class="col-xs-2">
-			        			<label for="usr">Email</label>
-			        			<input type="email" class="form-control">
-		        			</div>
-		        		</form>
-		        	</div>
-		        	
-		        	<div class="form-group row">
-		        		<form style="margin-top: 5%;">
-		        			<div class="col-xs-2">
-			        			<label for="usr">Senha</label>
-			        			<input type="password" class="form-control">
-		        			</div>
-		        			
-		        			<div class="col-xs-2">
-			        			<label for="usr">Repetir senha</label>
-			        			<input type="password" class="form-control">
-		        			</div>
-		        		</form>
-		        	</div>
-		        	
-		        	
-		        	<div class="container-fluid" style="margin-top: 5%; margin-left: 10%;">
-		        		<button type="submit" class="btn btn-default btn-lg">Cadastrar-se</button>
-		        	</div>
-		        </div>
-   
-        </div>
-        
-        <div class="footer">
-	<div class="container">
-		 <div class="row">
-		 	<div class="col-md-12">
-		 		<ul class="list-inline pull-left">
-		 		<li><a href="#">Termos de serviço</a></li>
-		 			<li><a href="#">Política de Privacidade</a></li>
-		 			<li><a href="#">Contato</a></li>
-		 		</ul>
-		 		<!-- <form class="navbar-form pull-right" role="search">
-			        <div class="form-group">
-			        <input type="text" class="form-control" placeholder="Search">
-			        </div>
-			        <button type="Find" class="btn btn-default">Find</button>
-			    </form> -->
-		 	</div>	
-		 </div>	
-		 <div class="copy-right text-center">
-			<p>&#169Copyright 2014 All Rights Reserved  Template <a href="http://w3layouts.com/">  w3layouts.com</a></p>	
+			</div>
+		</div>
+  <!-- Fim do Cadastro -->      
+       <div class="footer">
+		<div class="container">
+			 <div class="row">
+			 	<div class="col-md-12">
+			 		<ul class="list-inline pull-left">
+			 		<li><a href="#">Termos de serviço</a></li>
+			 			<li><a href="#">Política de Privacidade</a></li>
+			 			<li><a href="#">Contato</a></li>
+			 		</ul>
+			 		<!-- <form class="navbar-form pull-right" role="search">
+				        <div class="form-group">
+				        <input type="text" class="form-control" placeholder="Search">
+				        </div>
+				        <button type="Find" class="btn btn-default">Find</button>
+				    </form> -->
+			 	</div>	
+			 </div>	
+			 <div class="copy-right text-center">
+				<p>&#169Copyright 2014 All Rights Reserved  Template <a href="http://w3layouts.com/">  w3layouts.com</a></p>	
+			</div>
 		</div>
 	</div>
-</div>
     </body>
 </html>
