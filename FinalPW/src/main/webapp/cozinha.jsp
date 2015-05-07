@@ -1,4 +1,3 @@
-
 <html>
 	<meta charset = "UTF-8">
 	<head>
@@ -25,6 +24,7 @@
 	</head>
 	
 	<body>
+	
 	
 		<script>
 		  window.fbAsyncInit = function() {
@@ -89,9 +89,30 @@
 					<!----start-images-slider---->	
 				  <!-- Single button -->
 				</div>
-
+				 <div class="container-fluid Login">
+			 		<a type="button" class ="btn btn-md btn-default" href="Cadastro.jsp">Ingressar</a>
+	   				<!-- <li class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></li>	 -->						
+				</div>
 			</div>
         </div>
         </div>
-    </body>
+	   
+		<div class="footer">
+			<div class="container">
+				 <div class="row">
+				 	<div class="col-md-12">
+				 		<ul class="list-inline pull-left">
+				 			<li><a href="#">Termos de serviço</a></li>
+				 			<li><a href="#">Política de Privacidade</a></li>
+				 			<li><a href="#">Contato</a></li>
+				 		</ul>
+				 	</div>	
+				 </div>	
+				 <div class="copy-right text-center">
+					<p>&#169Copyright 2014 All Rights Reserved  Template <a href="http://w3layouts.com/">  w3layouts.com</a></p>	
+				</div>
+			</div>
+		</div>
+		
+	</body>
 </html>
