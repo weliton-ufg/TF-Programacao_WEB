@@ -39,6 +39,7 @@ div.logo {
 }
 .header-bg{
 	background:#333;
+	padding: 1% 0;
 }
 .navbar-default {
 	background-color: #333;
@@ -289,10 +290,10 @@ div.col-md-2 {
 	font-weight:700;
 }
 .b-animate img {
-	margin: 46% 0% 0 0;
+	margin: 27% 0% 0 0;
 	display: -webkit-inline-box;
 	background: #333;
-	padding: 15px;
+	padding: 3%;
 	border-radius: 2em;
 	-webkit-animation: 2em;
 	-moz-border-radius: 2em;

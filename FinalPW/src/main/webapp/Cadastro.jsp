@@ -74,9 +74,9 @@
 							          </button>
 							          <ul class="dropdown-menu" role="menu">
 							            <li><a href="cozinha.jsp">Todas</a></li>
-							            <li><a href="#">Japonesa</a></li>
-							            <li><a href="#">Mexicana</a></li>						            
-							            <li><a href="#">Vegetariana</a></li>
+							            <li><a href="cozinha.jsp">Japonesa</a></li>
+							            <li><a href="cozinha.jsp">Mexicana</a></li>						            
+							            <li><a href="cozinha.jsp">Vegetariana</a></li>
 							          </ul>
 							        </div>						          
 						        </li>

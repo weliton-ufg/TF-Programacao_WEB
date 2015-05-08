@@ -54,25 +54,30 @@
 							          </button>
 							          <ul class="dropdown-menu" role="menu">
 							            <li><a href="cozinha.jsp">Todas</a></li>
-							            <li><a href="#">Japonesa</a></li>
-							            <li><a href="#">Mexicana</a></li>						            
-							            <li><a href="#">Vegetariana</a></li>
+							            <li><a href="cozinha.jsp">Japonesa</a></li>
+							            <li><a href="cozinha.jsp">Mexicana</a></li>						            
+							            <li><a href="cozinha.jsp">Vegetariana</a></li>
 							          </ul>
 							        </div>						          
 						        </li>
 						        <li><a href="about.html">Sobre</a></li>
 						        <li><a href="contact.jsp">Contato</a></li>
+						        <li><a href="Cadastro.jsp">Ingressar</a></li>
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->						
 						</nav>
 					</div>
-					<!----start-images-slider---->	
 				  <!-- Single button -->
 				</div>
 
 			</div>
         </div>
+        </div>
+        <div class="container">
+        	<div class="main">
+        		<h1>Em construção</h1>
+        	</div>
         </div>
     </body>
 </html>
