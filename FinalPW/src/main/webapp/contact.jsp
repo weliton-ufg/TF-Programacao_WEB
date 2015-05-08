@@ -23,26 +23,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script type="text/javascript" src="web/js/bootstrap.min.js"></script>
 		<!--  jquery plguin -->
 	</head>
-	<body>
-		<!----start-container----->
-		<script>
-		  window.fbAsyncInit = function() {
-		    FB.init({
-		      appId      : '1577814659163295',
-		      xfbml      : true,
-		      version    : 'v2.3'
-		    });
-		  };
-		
-		  (function(d, s, id){
-		     var js, fjs = d.getElementsByTagName(s)[0];
-		     if (d.getElementById(id)) {return;}
-		     js = d.createElement(s); js.id = id;
-		     js.src = "//connect.facebook.net/pt_BR/sdk.js";
-		     fjs.parentNode.insertBefore(js, fjs);
-		   }(document, 'script', 'facebook-jssdk'));
-		</script>
-
 <!----start-container----->
 		<div class="navbar navbar-fixed-top">
 		<div class="header-bg">
@@ -141,9 +121,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  </form>
            </div>
        </div>
-<!--         <div class="map"> -->
-<!-- 					<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px"></a></small> -->
-<!-- 	    </div> -->
+
 <div class="footer">
 	<div class="container">
 		 <div class="row">
