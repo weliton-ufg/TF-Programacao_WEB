@@ -79,7 +79,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							        </div>						          
 						        </li>
 						        <li><a href="about.html">Sobre</a></li>
-						        <li><a href="contact.html">Contato</a></li>
+						        <li><a href="contact.jsp">Contato</a></li>
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->						
@@ -105,25 +105,25 @@ License URL: http://creativecommons.org/licenses/by/3.0/
        	     <form class="form-horizontal" role="form">
        	     	 <div class="form-group">
 				    <label for="inputmane3" class="col-sm-2 control-label">Nome</label>
-				    <div class="col-sm-10">
+				    <div class="col-sm-8">
 				      <input type="name" class="form-control" id="name" placeholder="Nome">
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-				    <div class="col-sm-10">
+				    <div class="col-sm-8">
 				      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="inputPassword3" class="col-sm-2 control-label">Senha</label>
-				    <div class="col-sm-10">
+				    <div class="col-sm-8">
 				      <input type="password" class="form-control" id="inputPassword3" placeholder="Senha">
 				    </div>
 				  </div>
 				  <div class="form-group">
 				    <label for="inputPassword3" class="col-sm-2 control-label">Website</label>
-				    <div class="col-sm-10">
+				    <div class="col-sm-8">
 				      <input type="website" class="form-control" id="website" placeholder="www.seusite.com.br">
 				    </div>
 				  </div>
@@ -149,9 +149,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 <div class="row">
 		 	<div class="col-md-12">
 		 		<ul class="list-inline pull-left">
-		 		<li><a href="#">Termos de serviÃ§o</a></li>
-		 			<li><a href="#">PolÃ­tica de Privacidade</a></li>
-		 			<li><a href="#">Contato</a></li>
+		 		<li><a href="#">Termos de serviço</a></li>
+		 			<li><a href="#">Polí­tica de Privacidade</a></li>
+		 			<li><a href="contact.jsp">Contato</a></li>
+		 			<li><a href="cadastroRestaurante.jsp">Você tem um restaurante?</a></li>
 		 		</ul>
 		 	</div>	
 		 </div>	

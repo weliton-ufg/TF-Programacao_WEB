@@ -1,31 +1,30 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
 <html>
-	<meta charset = "UTF-8">
 	<head>
+		<meta charset="UTF-8">
 		<title>Restaurant Booking</title>
 		<link href="web/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 		<link href="web/css/bootstrap.css" rel='stylesheet' type='text/css' />
 		<link href="web/css/theme.css" rel='stylesheet' type='text/css' />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-		<!--webfonts-->
+		</script>
+		<!----webfonts---->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
 		<!----//webfonts---->
 		<script type="text/javascript" src="web/js/jquery.min.js"></script>
 		<script type="text/javascript" src="web/js/bootstrap.js"></script>
 		<script type="text/javascript" src="web/js/bootstrap.min.js"></script>
 		<!--  jquery plguin -->
-	    <script type="text/javascript" src="web/js/jquery.min.js"></script>
-	<!--start slider -->
-	    <link rel="stylesheet" href="web/css/fwslider.css" media="all">
-		<script src="web/js/jquery-ui.min.js"></script>
-		<script src="web/js/css3-mediaqueries.js"></script>
-		<script src="web/js/fwslider.js"></script>
-	<!--end slider -->
 	</head>
-	
 	<body>
-	
-	
+		<!----start-container----->
 		<script>
 		  window.fbAsyncInit = function() {
 		    FB.init({
@@ -44,7 +43,7 @@
 		   }(document, 'script', 'facebook-jssdk'));
 		</script>
 
-		<!----start-container----->
+<!----start-container----->
 		<div class="navbar navbar-fixed-top">
 		<div class="header-bg">
 			<div class="container">
@@ -80,7 +79,7 @@
 							        </div>						          
 						        </li>
 						        <li><a href="about.html">Sobre</a></li>
-						        <li><a href="contact.html">Contato</a></li>
+						        <li><a href="contact.jsp">Contato</a></li>
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->						
@@ -89,30 +88,14 @@
 					<!----start-images-slider---->	
 				  <!-- Single button -->
 				</div>
-				 <div class="container-fluid Login">
+				<div class="Login">
 			 		<a type="button" class ="btn btn-md btn-default" href="Cadastro.jsp">Ingressar</a>
 	   				<!-- <li class="fb-login-button" data-max-rows="1" data-size="large" data-show-faces="false" data-auto-logout-link="false"></li>	 -->						
 				</div>
 			</div>
         </div>
         </div>
-	   
-		<div class="footer">
-			<div class="container">
-				 <div class="row">
-				 	<div class="col-md-12">
-				 		<ul class="list-inline pull-left">
-				 			<li><a href="#">Termos de serviço</a></li>
-				 			<li><a href="#">Política de Privacidade</a></li>
-				 			<li><a href="#">Contato</a></li>
-				 		</ul>
-				 	</div>	
-				 </div>	
-				 <div class="copy-right text-center">
-					<p>&#169Copyright 2014 All Rights Reserved  Template <a href="http://w3layouts.com/">  w3layouts.com</a></p>	
-				</div>
-			</div>
-		</div>
-		
-	</body>
+ 		
+</body>
 </html>
+

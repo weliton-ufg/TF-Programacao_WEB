@@ -81,7 +81,7 @@
 							        </div>						          
 						        </li>
 						        <li><a href="about.html">Sobre</a></li>
-						        <li><a href="contact.html">Contato</a></li>
+						        <li><a href="contact.jsp">Contato</a></li>
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->						
@@ -153,7 +153,7 @@
 					        	</div>
 					        	<div class="col-md-11">
 					        		<label for="seha">Senha</label>
-					        		<input type="text" class="form-control" name="senha"> 
+					        		<input type="password" class="form-control" name="senha"> 
 					        	</div>
 					        </div>
 					       
@@ -162,6 +162,8 @@
 				        			<input type="submit" class="form-control btn btn-success" value="Login!">
 				        		</div>
 				        	</div>
+				        	
+				        	
 		        	</div>
 		        </div>
 			</div>
@@ -174,7 +176,8 @@
 			 		<ul class="list-inline pull-left">
 			 		<li><a href="#">Termos de serviço</a></li>
 			 			<li><a href="#">Política de Privacidade</a></li>
-			 			<li><a href="#">Contato</a></li>
+			 			<li><a href="contact.jsp">Contato</a></li>
+			 			<li><a href="cadastroRestaurante.jsp">Você tem um restaurante?</a></li>
 			 		</ul>
 			 		<!-- <form class="navbar-form pull-right" role="search">
 				        <div class="form-group">
@@ -182,12 +185,14 @@
 				        </div>
 				        <button type="Find" class="btn btn-default">Find</button>
 				    </form> -->
-			 	</div>	
+			 	</div>
 			 </div>	
 			 <div class="copy-right text-center">
 				<p>&#169Copyright 2014 All Rights Reserved  Template <a href="http://w3layouts.com/">  w3layouts.com</a></p>	
 			</div>
+			
 		</div>
+		
 	</div>
     </body>
 </html>

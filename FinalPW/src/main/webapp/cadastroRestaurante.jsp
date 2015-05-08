@@ -80,7 +80,7 @@
 							        </div>						          
 						        </li>
 						        <li><a href="about.html">Sobre</a></li>
-						        <li><a href="contact.html">Contato</a></li>
+						        <li><a href="contact.jsp">Contato</a></li>
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->						
