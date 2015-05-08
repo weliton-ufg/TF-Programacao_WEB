@@ -46,7 +46,7 @@
 		</script>
 
 		<!----start-container----->
-		<div class="navbar navbar-fixed-top">
+		<div class="navbar">
 		<div class="header-bg">
 			<div class="container">
 				<div class="row">
@@ -96,12 +96,13 @@
         </div>
         
         <!--Cadastre-se-->
+        <div class="container">
         <div class="main">
 	       <div class="container"> 
 	       		<div class="row">
 	       			<div class="col-md-6" style="border-right: 1px solid #4B5456;">
 	       				<div class="alert alert-warning">
-				        	<div class="fb-login-button text-center" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+				        	<div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 				        	<p class="text-center">A maneira mais fácil de se cadastrar</p>
 				        </div>
 				        <div style="margin-top:3%; margin-bottom:3%; border: 1px solid #4B5456;"></div>
@@ -167,6 +168,7 @@
 		        	</div>
 		        </div>
 			</div>
+		</div>
 		</div>
   <!-- Fim do Cadastro -->      
        <div class="footer">
