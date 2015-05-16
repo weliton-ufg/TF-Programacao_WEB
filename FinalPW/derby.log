@@ -1,0 +1,19 @@
+----------------------------------------------------------------
+Fri May 15 21:37:24 BRT 2015:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-014d-5a27-71e9-00000ca414e8 
+on database directory /Users/weryquessantos/git/TF-Programacao_WEB/FinalPW/db with class loader WebappClassLoader
+  context: /FinalPW
+  delegate: false
+  repositories:
+----------> Parent Classloader:
+ClassRealm[plugin>org.apache.tomcat.maven:tomcat7-maven-plugin:2.2, parent: sun.misc.Launcher$AppClassLoader@55f96302]
+ 
+Loaded from file:/Users/weryquessantos/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_25-b17
+user.dir=/Users/weryquessantos/git/TF-Programacao_WEB/FinalPW
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.10.3
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

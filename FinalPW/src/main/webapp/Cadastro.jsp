@@ -76,7 +76,7 @@
 							            <li><a href="cozinha.jsp">Todas</a></li>
 							            <li><a href="cozinha.jsp">Japonesa</a></li>
 							            <li><a href="cozinha.jsp">Mexicana</a></li>						            
-							            <li><a href="cozinha.jsp">Vegetariana</a></li>
+							            <li><a href="#">Vegetariana</a></li>
 							          </ul>
 							        </div>						          
 						        </li>
@@ -114,7 +114,7 @@
 					        	</div>
 					        	<div class="col-md-6">
 					        		<label for="unome">Sobrenome</label>
-					        		<input type="text" class="form-control" name="unome"> 
+					        		<input type="text" class="form-control" name="sobrenome"> 
 					        	</div>
 					        </div>
 				        	<div class="row">
@@ -135,7 +135,7 @@
 					        </div>
 					        <div class="row">
 				        		<div class="col-md-6 col-md-offset-3">
-				        			<input type="submit" class="form-control btn btn-primary" value="Cadastre-se Já!">
+				        			<input action ="Cadastro" type="submit" name="op" class="form-control btn btn-primary" value="Cadastre-se Já!"> 
 				        		</div>
 				        	</div>
 				        </form>
