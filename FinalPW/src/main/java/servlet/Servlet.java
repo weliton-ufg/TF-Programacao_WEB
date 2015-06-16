@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import cliente.Cliente;
+
 @WebServlet(value = "/Cadastro")
 public class Servlet extends HttpServlet {
+	Cliente cliente = new Cliente();
 	
 	@Override
 	public void init() throws ServletException {
@@ -103,6 +106,8 @@ public class Servlet extends HttpServlet {
 //	}
 
 	private void chamarPosLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.setAttribute("nomeUsuario",
+				"Gaiato");
 		req.getRequestDispatcher("posLogin.jsp").forward(req, resp);	
 	}
 
@@ -113,18 +118,15 @@ public class Servlet extends HttpServlet {
 		String sobrenome = req.getParameter("sobrenome");
 		String email = req.getParameter("email");
 		String senha = req.getParameter("senha");
+		
+		cliente.setNome(nome);
+		cliente.setSobrenome(sobrenome);
+		cliente.setEmail(email);
+		cliente.setSenha(senha);
+		
+		cliente.insertClient();
+		
 
-		String url = "jdbc:derby:db;create=true";
-		Connection conexao = DriverManager.getConnection(url);
-		Statement stmt = conexao.createStatement();
-		
-		stmt.executeUpdate("insert into cliente (nome, sobrenome, email, senha) values ('"
-			+ nome + "', '" + sobrenome + "','"+ email +"','"+ senha +"')");
-		
-//		Cliente cliente = new Cliente();
-//		cliente.setNome(nome);
-//		cliente.setSobrenome(sobrenome);
-//
 //		req.setAttribute("cliente", cliente);
 //
 		chamarJsp(req, resp);

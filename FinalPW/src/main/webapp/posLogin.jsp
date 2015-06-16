@@ -76,7 +76,8 @@
 										</li>
 										<li><a href="about.html">Sobre</a></li>
 										<li><a href="contact.jsp">Contato</a></li>
-									</ul>
+										<li style="color: white;"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${nomeUsuario}</a></li>
+									</ul> 
 								</div>
 								<!-- /.navbar-collapse -->
 							</div>
