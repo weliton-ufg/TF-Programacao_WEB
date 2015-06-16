@@ -48,7 +48,10 @@ public class Servlet extends HttpServlet {
 			else if (op.equals("Cadastre-se Já!")) {
 					salvarCliente(req, resp);
 				
-			} 
+			}
+			else if(op.equals("Login!")){
+				chamarPosLogin(req, resp);
+			}
 //			else {
 //				chamarJsp(req, resp);
 //			}
@@ -98,6 +101,10 @@ public class Servlet extends HttpServlet {
 //
 //		chamarJsp(req, resp);
 //	}
+
+	private void chamarPosLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("posLogin.jsp").forward(req, resp);	
+	}
 
 	private void salvarCliente(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException, SQLException {

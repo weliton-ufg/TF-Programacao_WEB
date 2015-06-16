@@ -5,6 +5,53 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 */
+
+.wrap {
+  margin:0 auto;
+  padding:0;
+  width: 320px;
+}
+.site-nav {
+  background: rgb(255,255,255);
+  border-bottom: 2px solid rgb(55,55,55);
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0 10px 10px 10px;
+  width: 100%;
+}
+.site-nav-wrap {
+  height: 75px;
+  float: left;
+  overflow: hidden;
+  width: 100%;
+}
+.site-nav-toggle {
+  background-color: rgb(200,200,200);
+  border-bottom-right-radius: 150px;
+  border-bottom-left-radius: 150px;
+  color: rgb(3,3,3);
+  clear: both;
+  cursor: pointer;
+  display: block;
+  height: 75px;
+  line-height: 75px;
+  margin: -20px auto 40px auto;
+  text-align: center;
+  transition: color .5s ease;
+  width: 150px;
+}
+.site-nav-toggle:hover {
+  background-color: rgb(3,3,3);
+  color: rgb(200,200,200);
+  transition: color .5s ease;
+}
+li { 
+  margin-top: 10px;
+}
+
 .body{
 	font-family: 'Open Sans', 'sans-serif';
 }

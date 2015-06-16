@@ -106,7 +106,7 @@
 				        	<p class="text-center">A maneira mais fácil de se cadastrar</p>
 				        </div>
 				        <div style="margin-top:3%; margin-bottom:3%; border: 1px solid #4B5456;"></div>
-				        <form action="" class="form-group">
+				        <form class="form-group" action="Cadastro">
 				        	<div class="row">
 					        	<div class="col-md-6">
 					        		<label for="nome">Nome</label>
@@ -135,7 +135,7 @@
 					        </div>
 					        <div class="row">
 				        		<div class="col-md-6 col-md-offset-3">
-				        			<input action ="Cadastro" type="submit" name="op" class="form-control btn btn-primary" value="Cadastre-se Já!"> 
+				        			<input type="submit" name="op" class="form-control btn btn-primary" value="Cadastre-se Já!"> 
 				        		</div>
 				        	</div>
 				        </form>
@@ -146,7 +146,7 @@
 				        	<p class="text-center">Faça seu login!</p>
 				        </div>
 				        <div style="margin-top:3%; margin-bottom:3%; border: 1px solid #4B5456;"></div>
-				        <form action="" class="form-group">
+				        <form  class="form-group" action="Cadastro">
 				        	<div class="row">
 					        	<div class="col-md-11">
 					        		<label for="email">Email</label>
@@ -160,11 +160,11 @@
 					       
 					        <div class="row">
 				        		<div class="col-md-6 col-md-offset-3">
-				        			<input type="submit" class="form-control btn btn-success" value="Login!">
+				        			<input type="submit" name = "op" class="form-control btn btn-success" value="Login!">
 				        		</div>
 				        	</div>
 				        	
-				        	
+				        </form>
 		        	</div>
 		        </div>
 			</div>
