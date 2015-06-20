@@ -11,10 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import cliente.Cliente;
 
-@WebServlet(value = "/Cadastro")
+@WebServlet(value = "/Servlet")
 public class Servlet extends HttpServlet {
-	Cliente cliente = new Cliente();
-	
+	String N;
 	@Override
 	public void init() throws ServletException {
 		try {
@@ -41,7 +40,7 @@ public class Servlet extends HttpServlet {
 			String op = req.getParameter("op");
 
 			if (op == null) {
-				chamarJsp(req, resp);
+				//chamarJsp(req, resp);
 			} 
 			//else if (op.equals("carregar")) {
 //				carregarUf(req, resp);
@@ -54,6 +53,9 @@ public class Servlet extends HttpServlet {
 			}
 			else if(op.equals("Login!")){
 				chamarPosLogin(req, resp);
+			}
+			else if(op.equals("Configurações")){
+				carregarCliente(req, resp, N);
 			}
 //			else {
 //				chamarJsp(req, resp);
@@ -81,33 +83,41 @@ public class Servlet extends HttpServlet {
 //		chamarJsp(req, resp);
 //	}
 
-//	private void carregarUf(HttpServletRequest req, HttpServletResponse resp)
-//			throws ServletException, IOException, SQLException {
-//		String codigo = req.getParameter("codigo");
-//
-//		String url = "jdbc:derby:db;create=true";
-//		Connection conexao = DriverManager.getConnection(url);
-//		Statement stmt = conexao.createStatement();
-//		ResultSet rs = stmt.executeQuery("select nome from uf where codigo = '" + codigo + "'");
-//
-//		Cliente cliente = new Cliente();
-//		cliente.setCodigo(codigo);
-//
-//		if (rs.next()) {
-//			String nome = rs.getString("nome");
-//			cliente.setNome(nome);
-//		} else {
-//			cliente.setNome("");
-//		}
-//
-//		req.setAttribute("uf", cliente);
-//
-//		chamarJsp(req, resp);
-//	}
+	private void carregarCliente(HttpServletRequest req, HttpServletResponse resp, String N)
+			throws ServletException, IOException, SQLException {
+
+		String url = "jdbc:derby:db;create=true";
+		Connection conexao = DriverManager.getConnection(url);
+		Statement stmt = conexao.createStatement();
+		ResultSet rs = stmt.executeQuery("select nome, sobrenome, email from cliente where nome = '"+ N +"' or email = '" + N + "'");
+
+		Cliente cliente = new Cliente();
+
+		if (rs.next()) {
+			cliente.setNome(rs.getString("nome"));
+			cliente.setSobrenome(rs.getString("sobrenome"));
+			cliente.setEmail(rs.getString("email"));
+		} else {
+			cliente.setNome("");
+			cliente.setSobrenome("");
+			cliente.setEmail("");
+		}
+
+		req.setAttribute("nome", cliente.getNome());
+		req.setAttribute("sobrenome", cliente.getSobrenome());
+		req.setAttribute("email", cliente.getEmail());
+		
+		chamarConfig(req, resp);
+	}
+	
+	private void chamarConfig(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		req.getRequestDispatcher("Configuracoes.jsp").forward(req, resp);	
+	}
 
 	private void chamarPosLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		N = req.getParameter("Login");
 		req.setAttribute("nomeUsuario",
-				"Gaiato");
+				req.getParameter("Login"));
 		req.getRequestDispatcher("posLogin.jsp").forward(req, resp);	
 	}
 
@@ -118,6 +128,8 @@ public class Servlet extends HttpServlet {
 		String sobrenome = req.getParameter("sobrenome");
 		String email = req.getParameter("email");
 		String senha = req.getParameter("senha");
+		
+		Cliente cliente = new Cliente();
 		
 		cliente.setNome(nome);
 		cliente.setSobrenome(sobrenome);

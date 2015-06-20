@@ -106,7 +106,7 @@
 				        	<p class="text-center">A maneira mais fácil de se cadastrar</p>
 				        </div>
 				        <div style="margin-top:3%; margin-bottom:3%; border: 1px solid #4B5456;"></div>
-				        <form class="form-group" action="Cadastro">
+				        <form class="form-group" action="Servlet">
 				        	<div class="row">
 					        	<div class="col-md-6">
 					        		<label for="nome">Nome</label>
@@ -146,11 +146,11 @@
 				        	<p class="text-center">Faça seu login!</p>
 				        </div>
 				        <div style="margin-top:3%; margin-bottom:3%; border: 1px solid #4B5456;"></div>
-				        <form  class="form-group" action="Cadastro">
+				        <form  class="form-group" action="Servlet">
 				        	<div class="row">
 					        	<div class="col-md-11">
-					        		<label for="email">Email</label>
-					        		<input type="text" class="form-control" name="email">
+					        		<label for="Login">Login</label>
+					        		<input type="text" placeholder="Nome ou E-mail" class="form-control" name="Login">
 					        	</div>
 					        	<div class="col-md-11">
 					        		<label for="seha">Senha</label>

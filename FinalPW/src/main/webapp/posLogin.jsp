@@ -76,7 +76,18 @@
 										</li>
 										<li><a href="about.html">Sobre</a></li>
 										<li><a href="contact.jsp">Contato</a></li>
-										<li style="color: white;"><a href="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${nomeUsuario}</a></li>
+										<li>
+											<div class="btn-group show-on-hover">
+												<button type="button"
+													class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown">
+													${nomeUsuario}<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="Servlet?op=Configurações">Configurações</a></li>
+												</ul>
+											</div>
+										</li>
 									</ul> 
 								</div>
 								<!-- /.navbar-collapse -->
