@@ -27,7 +27,7 @@
 			 ${sobrenome}</p>
 			<p>email: ${email}</p>
 
-			<input type="submit" name ="op" value="Excluir Conta">
+			<input class="btn btn-default btn-sm" type="button" onclick="Servlet?op=Excluir Conta" name ="op" value="Excluir Conta">
 		</div>
 	</body>
 </html>

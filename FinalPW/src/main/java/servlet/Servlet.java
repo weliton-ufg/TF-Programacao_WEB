@@ -65,23 +65,18 @@ public class Servlet extends HttpServlet {
 		}
 	}
 
-//	private void excluirUf(HttpServletRequest req, HttpServletResponse resp)
-//			throws ServletException, IOException, SQLException {
-//		String codigo = req.getParameter("codigo");
-//
-//		String url = "jdbc:derby:db;create=true";
-//		Connection conexao = DriverManager.getConnection(url);
-//		Statement stmt = conexao.createStatement();
-//		stmt.executeUpdate("delete from uf where codigo = '" + codigo + "'");
-//		
-//		Cliente cliente = new Cliente();
-//		cliente.setCodigo(codigo);
-//		cliente.setNome("");
-//
-//		req.setAttribute("uf", cliente);
-//
-//		chamarJsp(req, resp);
-//	}
+	private void excluirCliente(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException, SQLException {
+		
+		String url = "jdbc:derby:db;create=true";
+		Connection conexao = DriverManager.getConnection(url);
+		Statement stmt = conexao.createStatement();
+		stmt.executeUpdate("delete from cliente where email = '" + N + "'");
+		
+		
+		
+		chamarConfig(req, resp);
+	}
 
 	private void carregarCliente(HttpServletRequest req, HttpServletResponse resp, String N)
 			throws ServletException, IOException, SQLException {
@@ -114,10 +109,17 @@ public class Servlet extends HttpServlet {
 		req.getRequestDispatcher("Configuracoes.jsp").forward(req, resp);	
 	}
 
-	private void chamarPosLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		N = req.getParameter("Login");
-		req.setAttribute("nomeUsuario",
-				req.getParameter("Login"));
+	private void chamarPosLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
+		N = req.getParameter("email");
+		
+		String url = "jdbc:derby:db;create=true";
+		Connection conexao = DriverManager.getConnection(url);
+		Statement stmt = conexao.createStatement();
+		ResultSet rs = stmt.executeQuery("select nome from cliente where email = '"+ N +"'");
+		
+		if(rs.next())
+			req.setAttribute("nomeUsuario", rs.getString("nome"));
+		
 		req.getRequestDispatcher("posLogin.jsp").forward(req, resp);	
 	}
 

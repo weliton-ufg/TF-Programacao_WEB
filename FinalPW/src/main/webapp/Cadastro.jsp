@@ -149,8 +149,8 @@
 				        <form  class="form-group" action="Servlet">
 				        	<div class="row">
 					        	<div class="col-md-11">
-					        		<label for="Login">Login</label>
-					        		<input type="text" placeholder="Nome ou E-mail" class="form-control" name="Login">
+					        		<label for="email">E-mail</label>
+					        		<input type="text" class="form-control" name="email">
 					        	</div>
 					        	<div class="col-md-11">
 					        		<label for="seha">Senha</label>
