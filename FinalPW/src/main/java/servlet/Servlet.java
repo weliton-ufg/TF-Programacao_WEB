@@ -13,7 +13,9 @@ import cliente.Cliente;
 
 @WebServlet(value = "/Servlet")
 public class Servlet extends HttpServlet {
-	String N;
+	
+	String idLogin;
+	
 	@Override
 	public void init() throws ServletException {
 		try {
@@ -29,6 +31,8 @@ public class Servlet extends HttpServlet {
 			Connection conexao = DriverManager.getConnection(url);
 			Statement stmt = conexao.createStatement();
 			stmt.execute(sql);
+			stmt.close();
+			conexao.close();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -38,6 +42,7 @@ public class Servlet extends HttpServlet {
 			throws ServletException, IOException {
 		try {
 			String op = req.getParameter("op");
+			
 
 			if (op == null) {
 				//chamarJsp(req, resp);
@@ -55,7 +60,10 @@ public class Servlet extends HttpServlet {
 				chamarPosLogin(req, resp);
 			}
 			else if(op.equals("Configurações")){
-				carregarCliente(req, resp, N);
+				carregarCliente(req, resp, idLogin);
+			}
+			else if(op.equals("Deletar")){
+				excluirCliente(req, resp);
 			}
 //			else {
 //				chamarJsp(req, resp);
@@ -67,15 +75,16 @@ public class Servlet extends HttpServlet {
 
 	private void excluirCliente(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException, SQLException {
+		String clienteMail = req.getParameter("clienteMail");
 		
 		String url = "jdbc:derby:db;create=true";
 		Connection conexao = DriverManager.getConnection(url);
-		Statement stmt = conexao.createStatement();
-		stmt.executeUpdate("delete from cliente where email = '" + N + "'");
+		Statement stmt = conexao.createStatement();		
+		stmt.executeUpdate("delete from cliente where email = '" + clienteMail + "'");
+		stmt.close();
+		conexao.close();
 		
-		
-		
-		chamarConfig(req, resp);
+		chamarJsp(req, resp, "index.html");
 	}
 
 	private void carregarCliente(HttpServletRequest req, HttpServletResponse resp, String N)
@@ -102,23 +111,26 @@ public class Servlet extends HttpServlet {
 		req.setAttribute("sobrenome", cliente.getSobrenome());
 		req.setAttribute("email", cliente.getEmail());
 		
-		chamarConfig(req, resp);
-	}
-	
-	private void chamarConfig(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("Configuracoes.jsp").forward(req, resp);	
+		rs.close();
+		stmt.close();
+		conexao.close();
+		
+		chamarJsp(req, resp, "Configuracoes.jsp");
 	}
 
 	private void chamarPosLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
-		N = req.getParameter("email");
+		idLogin = req.getParameter("email");
 		
 		String url = "jdbc:derby:db;create=true";
 		Connection conexao = DriverManager.getConnection(url);
 		Statement stmt = conexao.createStatement();
-		ResultSet rs = stmt.executeQuery("select nome from cliente where email = '"+ N +"'");
+		ResultSet rs = stmt.executeQuery("select nome from cliente where email = '"+ idLogin +"'");
 		
 		if(rs.next())
 			req.setAttribute("nomeUsuario", rs.getString("nome"));
+		rs.close();
+		stmt.close();
+		conexao.close();
 		
 		req.getRequestDispatcher("posLogin.jsp").forward(req, resp);	
 	}
@@ -143,12 +155,13 @@ public class Servlet extends HttpServlet {
 
 //		req.setAttribute("cliente", cliente);
 //
-		chamarJsp(req, resp);
+		chamarJsp(req, resp, "Cadastro.jsp");
 	}
 
-	private void chamarJsp(HttpServletRequest req, HttpServletResponse resp)
+	private void chamarJsp(HttpServletRequest req, HttpServletResponse resp, String jsp)
 			throws ServletException, IOException {
-		req.getRequestDispatcher("Cadastro.jsp")
+		req.getRequestDispatcher(jsp)
 			.forward(req, resp);
+		
 	}
 }

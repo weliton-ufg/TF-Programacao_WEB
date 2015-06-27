@@ -25,6 +25,8 @@ public class Cliente {
 		
 		stmt.executeUpdate("insert into cliente (nome, sobrenome, email, senha) values ('"
 			+ nome + "', '" + sobrenome + "','"+ email +"','"+ senha +"')");
+		stmt.close();
+		conexao.close();
 	}
 
 	public String getNome() {
