@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!--
 Author: W3layouts
 Author URL: http://w3layouts.com
@@ -21,6 +23,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script type="text/javascript" src="web/js/jquery.min.js"></script>
 		<script type="text/javascript" src="web/js/bootstrap.js"></script>
 		<script type="text/javascript" src="web/js/bootstrap.min.js"></script>
+		<script src="web/js/logout.js"></script>
 		<!--  jquery plguin -->
 	</head>
 	<body>
@@ -31,7 +34,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>
+						<a href="index.jsp"><img src="web/images/logo.png" alt="" /></a>
 					</div>
 					<div class="col-md-8">					
 	 					<nav class="navbar navbar-default" role="navigation">
@@ -60,11 +63,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							          </ul>
 							        </div>						          
 						        </li>
-						        <li><a href="about.html">Sobre</a></li>
+						        <li><a href="about.jsp">Sobre</a></li>
 						        <li><a href="contact.jsp">Contato</a></li>
+						        <% if(session.getAttribute("usuarioLogado")!=null){ %>
+						      <li>
+											<div class="btn-group show-on-hover">
+												<button type="button"
+													class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown">
+													${usuarioLogado}<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="Servlet?op=Configurações">Configurações</a></li>
+													<li><a href="logout.jsp" >Sair</a></li>
+													
+									
+												</ul>
+											</div>
+										</li>
+										<% }else{%>
 						        <li><a href="Cadastro.jsp">Ingressar</a></li>
-						        
+						        <%} %>
 						      </ul>
+						   
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->						
 						</nav>
@@ -91,8 +112,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</div>
 				<div class="col-md-8">
 					<div>
-                        <h2 class="lead">&nbsp;&nbsp;&nbsp; A empresa Restaurant Booking tem como objetivo inovar a maneira de como vocÃª faz a reserva de restaurante, 
-						conta com os melhores de restaurantes que podem ser reservados por vocÃª com poucos cliques, de forma fÃ¡cil e segura</h2>					     
+                        <h2 class="lead">&nbsp;&nbsp;&nbsp; A empresa Restaurant Booking tem como objetivo inovar a maneira de como você faz a reserva de restaurante, 
+						conta com os melhores de restaurantes que podem ser reservados por você com poucos cliques, de forma fácil e segura</h2>					     
 						<p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
 					</div>
 				</div>
@@ -106,10 +127,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 <div class="row">
 		 	<div class="col-md-12">
 		 		<ul class="list-inline pull-left">
-		 			<li><a href="#">Termos de serviÃ§o</a></li>
-		 			<li><a href="#">PolÃ­tica de Privacidade</a></li>
+		 			<li><a href="#">Termos de serviço</a></li>
+		 			<li><a href="#">Política de Privacidade</a></li>
 		 			<li><a href="contact.jsp">Contato</a></li>
-		 			<li><a href="cadastroRestaurante.jsp">VocÃª tem um restaurante?</a></li>
+		 			<li><a href="cadastroRestaurante.jsp">Você tem um restaurante?</a></li>
 		 		</ul>
 		 	</div>	
 		 </div>	

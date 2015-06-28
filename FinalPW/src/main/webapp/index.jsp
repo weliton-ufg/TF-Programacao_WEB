@@ -27,16 +27,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<script src="web/js/jquery-ui.min.js"></script>
 		<script src="web/js/css3-mediaqueries.js"></script>
 		<script src="web/js/fwslider.js"></script>
+		
 	<!--end slider -->
 	</head>
 	<body>
+	
 		<!----start-container----->
 		<div class="navbar navbar-fixed-top">
 		<div class="header-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>
+						<div class="logo"><a href="index.jsp"><img src="web/images/logo.png" alt=""/></a></div>
 					</div>
 					<div class="col-md-8">					
 	 					<nav class="navbar navbar-default" role="navigation">
@@ -65,10 +67,29 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							          </ul>
 							        </div>						          
 						        </li>
-						        <li><a href="about.html">Sobre</a></li>
+						        <li><a href="about.jsp">Sobre</a></li>
 						        <li><a href="contact.jsp">Contato</a></li>
+						           <% if(session.getAttribute("usuarioLogado")!=null){ %>
+						      <li>
+											<div class="btn-group show-on-hover">
+												<button type="button"
+													class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown">
+													${usuarioLogado}<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="Servlet?op=Configurações">Configurações</a></li>
+													<li><a href="logout.jsp" >Sair</a></li>
+													
+													
+												</ul>
+											</div>
+										</li>
+										<% }else{%>
 						        <li><a href="Cadastro.jsp">Ingressar</a></li>
+						        <%} %>
 						      </ul>
+						   
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->	
 						  
@@ -93,7 +114,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		                <div class="slide_content">
 		                    <div class="slide_content_wrap">
 		                         <!-- <p class="description">New Arrivals</p> -->
-		                        <h4 class="title">Os melhores restaurantes estÃ£o aqui</h4>	
+		                        <h4 class="title">Os melhores restaurantes estão aqui</h4>	
 		                        <p class="description"><a href="cozinha.jsp">Veja todos</a></p>	                      
 		                        <div class="slide-btns description">		            	                      
 		                        </div>
@@ -106,7 +127,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		                <div class="slide_content">
 		                     <div class="slide_content_wrap">		                   
 		                        <!--  <p class="description">New Arrivals</p> -->
-		                        <h4 class="title">FaÃ§a sua reserva conosco</h4>	 
+		                        <h4 class="title">Faça sua reserva conosco</h4>	 
 		                        <p class="description"><a href="cozinha.jsp">Escolha seu restaurante</a></p> 	                       		                       
 		                        <div class="slide-btns description">		                      
 		                        </div>
@@ -132,17 +153,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  		<h2>Restaurantes em Destaque</h2>
  	</div>	
  </div>	
-
 <div class="row">
-
 					<!----start-model-box---->
 						<a data-toggle="modal" data-target=".bs-example-modal-md" href="#"> </a>
 						<div class="modal fade bs-example-modal-md light-box" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-md">
 						    <div class="modal-content light-box-info">
 						    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="web/images/close.png" title="close" /></button>
-						     <h3>DescriÃ§Ã£o sobre o restaurante</h3>
-						     <p>Aqui vem a descriÃ§Ã£o</p>
+						     <h3>Descrição sobre o restaurante</h3>
+						     <p>Aqui vem a descrição</p>
 						    </div>
 						  </div>
 						</div>
@@ -200,8 +219,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<div class="row">
 					<div class="col-md-4">
 						<div class="grid">
-							<h2>Sobre nÃ³s</h2>
-					        <p>Nascemos com a missÃ£o de conectar vocÃª com seus restaurantes prediletos
+							<h2>Sobre nós</h2>
+					        <p>Nascemos com a missão de conectar você com seus restaurantes prediletos
 					        em apenas poucos cliques</p>
 	                    </div>
 					</div>
@@ -236,10 +255,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 <div class="row">
 		 	<div class="col-md-12">
 		 		<ul class="list-inline pull-left">
-		 		<li><a href="#">Termos de serviÃ§o</a></li>
-		 			<li><a href="#">PolÃ­tica de Privacidade</a></li>
+		 		<li><a href="#">Termos de serviço</a></li>
+		 			<li><a href="#">Política de Privacidade</a></li>
 		 			<li><a href="contact.jsp">Contato</a></li>
-		 			<li><a href="cadastroRestaurante.jsp">VocÃª tem um restaurante?</a></li>
+		 			<li><a href="cadastroRestaurante.jsp">Você tem um restaurante?</a></li>
 		 		</ul>
 		 		<!-- <form class="navbar-form pull-right" role="search">
 			        <div class="form-group">
@@ -257,4 +276,3 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		
 </body>
 </html>
-

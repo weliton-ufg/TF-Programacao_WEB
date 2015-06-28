@@ -25,8 +25,8 @@
 	</head>
 	
 	<body>
-	
-	
+
+
 		<script>
 		  window.fbAsyncInit = function() {
 		    FB.init({
@@ -44,14 +44,36 @@
 		     fjs.parentNode.insertBefore(js, fjs);
 		   }(document, 'script', 'facebook-jssdk'));
 		</script>
-
+		<%  
+		if(request.getAttribute("ErroAoLogar")=="erro"){
+		%>
+		<script>
+			alert("O EMAIL OU A SENHA NÃO ESTÃO CORRETOS!");
+	    	
+   		 </script>
+		<%} 
+		if(request.getAttribute("Cadastrar")=="UsuarioJaExite"){
+		%>
+		<script>
+			alert("ESSE EMAIL JÁ ESTÁ SENDO USADO !");
+	    	
+   		 </script>
+		<%} 
+		if(request.getAttribute("Cadastrar")=="sucesso"){
+		%>
+		<script>
+			alert("Cadastrado com sucesso!");
+	    	
+   		 </script>
+		<%} %>
+	
 		<!----start-container----->
 		<div class="navbar">
 		<div class="header-bg">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>
+						<div class="logo"><a href="index.jsp"><img src="web/images/logo.png" alt=""/></a></div>
 					</div>
 					<div class="col-md-8">					
 	 					<nav class="navbar navbar-default" role="navigation">
@@ -80,7 +102,7 @@
 							          </ul>
 							        </div>						          
 						        </li>
-						        <li><a href="about.html">Sobre</a></li>
+						        <li><a href="about.jsp">Sobre</a></li>
 						        <li><a href="contact.jsp">Contato</a></li>
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
@@ -196,5 +218,6 @@
 		</div>
 		
 	</div>
+		
     </body>
 </html>

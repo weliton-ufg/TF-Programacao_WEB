@@ -31,7 +31,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4">
-						<div class="logo"><a href="index.html"><img src="web/images/logo.png" alt=""/></a></div>
+						<div class="logo"><a href="index.jsp"><img src="web/images/logo.png" alt=""/></a></div>
 					</div>
 					<div class="col-md-8">					
 	 					<nav class="navbar navbar-default" role="navigation">
@@ -60,9 +60,27 @@
 							          </ul>
 							        </div>						          
 						        </li>
-						        <li><a href="about.html">Sobre</a></li>
+						        <li><a href="about.jsp">Sobre</a></li>
 						        <li><a href="contact.jsp">Contato</a></li>
+						         <% if(session.getAttribute("usuarioLogado")!=null){ %>
+						      <li>
+											<div class="btn-group show-on-hover">
+												<button type="button"
+													class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown">
+													${usuarioLogado}<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="Servlet?op=Configurações">Configurações</a></li>
+													<li><a href="logout.jsp" >Sair</a></li>
+													
+									
+												</ul>
+											</div>
+										</li>
+										<% }else{%>
 						        <li><a href="Cadastro.jsp">Ingressar</a></li>
+						        <%} %>
 						      </ul>
 						    </div><!-- /.navbar-collapse -->
 						  </div><!-- /.container-fluid -->						

@@ -27,10 +27,16 @@
 <script src="web/js/jquery-ui.min.js"></script>
 <script src="web/js/css3-mediaqueries.js"></script>
 <script src="web/js/fwslider.js"></script>
+
 <!--end slider -->
 </head>
 
 <body>
+<%
+
+session.setAttribute("usuarioLogado",request.getAttribute("nomeUsuario") );
+application.setAttribute("usuarioLogado",request.getAttribute("nomeUsuario"));
+%>
 	<!----start-container----->
 	<div class="navbar navbar-fixed-top">
 		<div class="header-bg">
@@ -38,7 +44,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="logo">
-							<a href="index.html"><img src="web/images/logo.png" alt="" /></a>
+							<a href="index.jsp"><img src="web/images/logo.png" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-md-8">
@@ -74,22 +80,28 @@
 												</ul>
 											</div>
 										</li>
-										<li><a href="about.html">Sobre</a></li>
+										<li><a href="about.jsp">Sobre</a></li>
 										<li><a href="contact.jsp">Contato</a></li>
 										<li>
+											  <% if(session.getAttribute("usuarioLogado")!=null){ %>
+						      <li>
 											<div class="btn-group show-on-hover">
 												<button type="button"
 													class="btn btn-default dropdown-toggle"
 													data-toggle="dropdown">
-													${nomeUsuario}<span class="caret"></span>
+													${usuarioLogado}<span class="caret"></span>
 												</button>
 												<ul class="dropdown-menu" role="menu">
 													<li><a href="Servlet?op=Configurações">Configurações</a></li>
-												</ul>
+													<li><a href="logout.jsp">Sair</a></li>
+													
 											</div>
 										</li>
-									</ul> 
-								</div>
+										<% }else{%>
+						        <li><a href="Cadastro.jsp">Ingressar</a></li>
+						        <%} %>
+						      </ul>
+						   
 								<!-- /.navbar-collapse -->
 							</div>
 							<!-- /.container-fluid -->

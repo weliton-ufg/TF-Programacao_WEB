@@ -14,7 +14,7 @@ import cliente.Cliente;
 @WebServlet(value = "/Servlet")
 public class Servlet extends HttpServlet {
 	
-	String idLogin;
+	String idLogin,senha;
 	
 	@Override
 	public void init() throws ServletException {
@@ -53,7 +53,9 @@ public class Servlet extends HttpServlet {
 //				excluirUf(req, resp);
 //			} else
 			else if (op.equals("Cadastre-se Já!")) {
-					salvarCliente(req, resp);
+				   idLogin = req.getParameter("email");
+					salvarCliente(req, resp,  idLogin);
+					
 				
 			}
 			else if(op.equals("Login!")){
@@ -81,15 +83,16 @@ public class Servlet extends HttpServlet {
 		Connection conexao = DriverManager.getConnection(url);
 		Statement stmt = conexao.createStatement();		
 		stmt.executeUpdate("delete from cliente where email = '" + clienteMail + "'");
+		req.setAttribute("Deletado", "deletar");
 		stmt.close();
 		conexao.close();
 		
-		chamarJsp(req, resp, "index.html");
+		chamarJsp(req, resp,"logout.jsp");
 	}
 
 	private void carregarCliente(HttpServletRequest req, HttpServletResponse resp, String N)
 			throws ServletException, IOException, SQLException {
-
+		String op = req.getParameter("op");
 		String url = "jdbc:derby:db;create=true";
 		Connection conexao = DriverManager.getConnection(url);
 		Statement stmt = conexao.createStatement();
@@ -101,10 +104,29 @@ public class Servlet extends HttpServlet {
 			cliente.setNome(rs.getString("nome"));
 			cliente.setSobrenome(rs.getString("sobrenome"));
 			cliente.setEmail(rs.getString("email"));
+			
+			if(op.equals("Cadastre-se Já!")){
+				req.setAttribute("Cadastrar","UsuarioJaExite");
+				rs.close();
+				stmt.close();
+				conexao.close();
+				
+				chamarJsp(req, resp, "Cadastro.jsp");
+			}
+			
 		} else {
 			cliente.setNome("");
 			cliente.setSobrenome("");
 			cliente.setEmail("");
+			if(op.equals("Cadastre-se Já!")){
+				
+				req.setAttribute("Cadastrar","sucesso");
+				rs.close();
+				stmt.close();
+				conexao.close();
+				
+				chamarJsp(req, resp, "Cadastro.jsp");
+			}
 		}
 
 		req.setAttribute("nome", cliente.getNome());
@@ -120,42 +142,77 @@ public class Servlet extends HttpServlet {
 
 	private void chamarPosLogin(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException, SQLException {
 		idLogin = req.getParameter("email");
-		
+		senha=req.getParameter("senha");
 		String url = "jdbc:derby:db;create=true";
 		Connection conexao = DriverManager.getConnection(url);
 		Statement stmt = conexao.createStatement();
-		ResultSet rs = stmt.executeQuery("select nome from cliente where email = '"+ idLogin +"'");
+		ResultSet rs = stmt.executeQuery("select nome from cliente where email = '"+ idLogin +"'and senha='"+senha+"'");
 		
-		if(rs.next())
+		if(rs.next()){
 			req.setAttribute("nomeUsuario", rs.getString("nome"));
-		rs.close();
-		stmt.close();
-		conexao.close();
+			rs.close();
+			stmt.close();
+			conexao.close();
+			chamarJsp(req, resp,"posLogin.jsp");
+			
+		}
+		else{			
+			req.setAttribute("ErroAoLogar","erro");
+			rs.close();
+			stmt.close();
+			conexao.close();
+			chamarJsp(req, resp,"Cadastro.jsp");
+		}
 		
-		req.getRequestDispatcher("posLogin.jsp").forward(req, resp);	
+		
+			
 	}
 
-	private void salvarCliente(HttpServletRequest req, HttpServletResponse resp)
+	private void salvarCliente(HttpServletRequest req, HttpServletResponse resp,String N)
 			throws ServletException, IOException, SQLException {
 		
-		String nome = req.getParameter("nome");
-		String sobrenome = req.getParameter("sobrenome");
-		String email = req.getParameter("email");
-		String senha = req.getParameter("senha");
+	
 		
-		Cliente cliente = new Cliente();
 		
-		cliente.setNome(nome);
-		cliente.setSobrenome(sobrenome);
-		cliente.setEmail(email);
-		cliente.setSenha(senha);
-		
-		cliente.insertClient();
-		
+		String op = req.getParameter("op");
+		String url = "jdbc:derby:db;create=true";
+		Connection conexao = DriverManager.getConnection(url);
+		Statement stmt = conexao.createStatement();
+		ResultSet rs = stmt.executeQuery("select nome, sobrenome, email from cliente where email = '" + N + "'");
+
+		if(rs.next()){
+			req.setAttribute("Cadastrar","UsuarioJaExite");
+			rs.close();
+			stmt.close();
+			conexao.close();
+			
+			
+		}
+		else{		
+			String nome = req.getParameter("nome");
+			String sobrenome = req.getParameter("sobrenome");
+			String email = req.getParameter("email");
+			String senha = req.getParameter("senha");
+			
+			Cliente cliente = new Cliente();
+			
+			cliente.setNome(nome);
+			cliente.setSobrenome(sobrenome);
+			cliente.setEmail(email);
+			cliente.setSenha(senha);
+			
+			cliente.insertClient();		
+			req.setAttribute("Cadastrar","sucesso");
+			rs.close();
+			stmt.close();
+			conexao.close();
+			
+		}
+
+		chamarJsp(req, resp, "Cadastro.jsp");
 
 //		req.setAttribute("cliente", cliente);
 //
-		chamarJsp(req, resp, "Cadastro.jsp");
 	}
 
 	private void chamarJsp(HttpServletRequest req, HttpServletResponse resp, String jsp)

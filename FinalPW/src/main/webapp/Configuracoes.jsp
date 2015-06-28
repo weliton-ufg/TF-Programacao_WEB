@@ -21,6 +21,7 @@
 <!--  jquery plguin -->
 <script type="text/javascript" src="web/js/jquery.min.js"></script>
 
+
 </head>
 <body>
 	<div class="navbar navbar-fixed-top">
@@ -29,7 +30,7 @@
 				<div class="row">
 					<div class="col-md-4">
 						<div class="logo">
-							<a href="index.html"><img src="web/images/logo.png" alt="" /></a>
+							<a href="index.jsp"><img src="web/images/logo.png" alt="" /></a>
 						</div>
 					</div>
 					<div class="col-md-8">
@@ -65,10 +66,28 @@
 												</ul>
 											</div>
 										</li>
-										<li><a href="about.html">Sobre</a></li>
+										<li><a href="about.jsp">Sobre</a></li>
 										<li><a href="contact.jsp">Contato</a></li>
-									</ul>
-								</div>
+										  <% if(session.getAttribute("usuarioLogado")!=null){ %>
+						      <li>
+											<div class="btn-group show-on-hover">
+												<button type="button"
+													class="btn btn-default dropdown-toggle"
+													data-toggle="dropdown">
+													${usuarioLogado}<span class="caret"></span>
+												</button>
+												<ul class="dropdown-menu" role="menu">
+													<li><a href="Servlet?op=Configurações">Configurações</a></li>
+													<li><a href="logout.jsp" >Sair</a></li>
+													
+												</ul>
+											</div>
+										</li>
+										<% }else{%>
+						        <li><a href="Cadastro.jsp">Ingressar</a></li>
+						        <%} %>
+						      </ul>
+						   
 								<!-- /.navbar-collapse -->
 							</div>
 							<!-- /.container-fluid -->
@@ -152,6 +171,7 @@
 			var r = confirm("Deseja realmente excluir a conta?");
 			if (r == true) {
 				//window.alert("Conta excluida com sucesso!");
+				window.location.href="Servlet?op=Deletar&clienteMail=${email}";
 				window.location.href="Servlet?op=Deletar&clienteMail=${email}";
 			}
 		}
