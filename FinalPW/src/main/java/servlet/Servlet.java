@@ -13,7 +13,6 @@ import cliente.Cliente;
 
 @WebServlet(value = "/Servlet")
 public class Servlet extends HttpServlet {
-	
 	String idLogin,senha;
 	
 	@Override
@@ -25,6 +24,10 @@ public class Servlet extends HttpServlet {
 					+ "  sobrenome varchar(50),"
 					+ "	 email varchar(50),"
 					+ "  senha varchar(50),"
+					+ "  genero char(1),"
+					+ "  dataNas varchar(50),"
+					+ "  enderec varchar(50),"
+					+ "  telefone varchar(50),"
 					+ "  constraint pk_email primary key (email) "
 					+ ")";
 			String url = "jdbc:derby:db;create=true";
@@ -45,18 +48,11 @@ public class Servlet extends HttpServlet {
 			
 
 			if (op == null) {
-				//chamarJsp(req, resp);
+				
 			} 
-			//else if (op.equals("carregar")) {
-//				carregarUf(req, resp);
-//			} else if (op.equals("excluir")) {
-//				excluirUf(req, resp);
-//			} else
 			else if (op.equals("Cadastre-se Já!")) {
 				   idLogin = req.getParameter("email");
 					salvarCliente(req, resp,  idLogin);
-					
-				
 			}
 			else if(op.equals("Login!")){
 				chamarPosLogin(req, resp);
@@ -67,9 +63,6 @@ public class Servlet extends HttpServlet {
 			else if(op.equals("Deletar")){
 				excluirCliente(req, resp);
 			}
-//			else {
-//				chamarJsp(req, resp);
-//			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -84,6 +77,7 @@ public class Servlet extends HttpServlet {
 		Statement stmt = conexao.createStatement();		
 		stmt.executeUpdate("delete from cliente where email = '" + clienteMail + "'");
 		req.setAttribute("Deletado", "deletar");
+		
 		stmt.close();
 		conexao.close();
 		
@@ -96,7 +90,7 @@ public class Servlet extends HttpServlet {
 		String url = "jdbc:derby:db;create=true";
 		Connection conexao = DriverManager.getConnection(url);
 		Statement stmt = conexao.createStatement();
-		ResultSet rs = stmt.executeQuery("select nome, sobrenome, email from cliente where nome = '"+ N +"' or email = '" + N + "'");
+		ResultSet rs = stmt.executeQuery("select nome, sobrenome, email, genero, telefone, enderec, dataNas from cliente where email = '" + N + "'");
 
 		Cliente cliente = new Cliente();
 
@@ -104,6 +98,10 @@ public class Servlet extends HttpServlet {
 			cliente.setNome(rs.getString("nome"));
 			cliente.setSobrenome(rs.getString("sobrenome"));
 			cliente.setEmail(rs.getString("email"));
+			cliente.setGenero(rs.getString("genero").charAt(0));
+			cliente.setDataNas(rs.getString("dataNas"));
+			cliente.setEnderec(rs.getString("enderec"));
+			cliente.setTelefone(rs.getString("telefone"));
 			
 			if(op.equals("Cadastre-se Já!")){
 				req.setAttribute("Cadastrar","UsuarioJaExite");
@@ -132,6 +130,10 @@ public class Servlet extends HttpServlet {
 		req.setAttribute("nome", cliente.getNome());
 		req.setAttribute("sobrenome", cliente.getSobrenome());
 		req.setAttribute("email", cliente.getEmail());
+		req.setAttribute("genero", cliente.getGenero());
+		req.setAttribute("telefone", cliente.getTelefone());
+		req.setAttribute("enderec", cliente.getEnderec());
+		req.setAttribute("dataNas", cliente.getDataNas());
 		
 		rs.close();
 		stmt.close();
@@ -171,10 +173,6 @@ public class Servlet extends HttpServlet {
 	private void salvarCliente(HttpServletRequest req, HttpServletResponse resp,String N)
 			throws ServletException, IOException, SQLException {
 		
-	
-		
-		
-		String op = req.getParameter("op");
 		String url = "jdbc:derby:db;create=true";
 		Connection conexao = DriverManager.getConnection(url);
 		Statement stmt = conexao.createStatement();
@@ -182,6 +180,7 @@ public class Servlet extends HttpServlet {
 
 		if(rs.next()){
 			req.setAttribute("Cadastrar","UsuarioJaExite");
+			
 			rs.close();
 			stmt.close();
 			conexao.close();
@@ -193,6 +192,10 @@ public class Servlet extends HttpServlet {
 			String sobrenome = req.getParameter("sobrenome");
 			String email = req.getParameter("email");
 			String senha = req.getParameter("senha");
+			char genero = req.getParameter("genero").charAt(0);
+			String dataNas = req.getParameter("dataNas");
+			String enderec = req.getParameter("enderec");
+			String telefone = req.getParameter("telefone");
 			
 			Cliente cliente = new Cliente();
 			
@@ -200,9 +203,16 @@ public class Servlet extends HttpServlet {
 			cliente.setSobrenome(sobrenome);
 			cliente.setEmail(email);
 			cliente.setSenha(senha);
+			cliente.setGenero(genero);
+			cliente.setDataNas(dataNas);
+			cliente.setEnderec(enderec);
+			cliente.setTelefone(telefone);
 			
-			cliente.insertClient();		
+			
+			cliente.insertClient();	//insere cliente no banco
+			
 			req.setAttribute("Cadastrar","sucesso");
+			
 			rs.close();
 			stmt.close();
 			conexao.close();
@@ -210,9 +220,6 @@ public class Servlet extends HttpServlet {
 		}
 
 		chamarJsp(req, resp, "Cadastro.jsp");
-
-//		req.setAttribute("cliente", cliente);
-//
 	}
 
 	private void chamarJsp(HttpServletRequest req, HttpServletResponse resp, String jsp)

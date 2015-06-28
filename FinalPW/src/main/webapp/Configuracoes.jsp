@@ -128,24 +128,24 @@
 										<tbody>
 											<tr>
 												<td>Data de nascimento</td>
-												<td>01/24/1988</td>
+												<td>${dataNas}</td>
 											</tr>
 
 											<tr>
 											<tr>
 												<td>Genero</td>
-												<td>Male</td>
+												<td>${genero}</td>
 											</tr>
 											<tr>
 												<td>Endereço</td>
-												<td>Metro Manila,Philippines</td>
+												<td>${enderec}</td>
 											</tr>
 											<tr>
 												<td>Email</td>
 												<td><a href="#">${email}</a></td>
 											</tr>
 											<td>Telefone</td>
-											<td>123-4567-890(Landline)<br> <br>555-4567-890(Mobile)
+											<td>${telefone}<br>
 											</td>
 
 											</tr>

@@ -146,6 +146,30 @@
 				        		</div>
 				        	</div>
 				        	<div class="row">
+				        		<div class="col-md-6">
+				        			<label for="genero">Genero M/F</label>
+				        			<input type="text" class="form-control" name="genero">
+				        		</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-md-6">
+				        			<label for="dataNas">Data de nascimento 00/00/0000</label>
+				        			<input type="text" class="form-control" name="dataNas">
+				        		</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-md-6">
+				        			<label for="enderec">Endereço</label>
+				        			<input type="text" class="form-control" name="enderec">
+				        		</div>
+				        	</div>
+				        	<div class="row">
+				        		<div class="col-md-6">
+				        			<label for="telefone">Telefone (00) 0000-0000</label>
+				        			<input type="text" class="form-control" name="telefone">
+				        		</div>
+				        	</div>
+				        	<div class="row">
 					        	<div class="col-md-6">
 					        		<label for="senha">Senha</label>
 					        		<input type="password" class="form-control" name="senha">
