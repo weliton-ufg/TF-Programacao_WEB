@@ -164,8 +164,8 @@
 				        <form class="form-group" action="Servlet"  onSubmit="return valida_dados(this)">
 				        	<div class="row">
 					        	<div class="col-md-6">
-					        		<label for="nome">Nome</label>
-					        		<input type="text" class="form-control" name="nome">
+					        		<label for="nome"><strong style="color:red; font-size:18px;">*</strong>Nome</label>
+					        		<input type="text" class="form-control" name="nome" placeholder="Seu Nome" required="">
 					        	</div>
 					        	<div class="col-md-6">
 					        		<label for="unome">Sobrenome</label>
@@ -174,8 +174,10 @@
 					        </div>
 				        	<div class="row">
 				        		<div class="col-md-6">
-				        			<label for="email"><strong style="color:red; font-size:20px;">*</strong>Email</label>
-				        			<input type="text" class="form-control" name="email" placeholder="ex: gafanhoto@hotmail.com">
+				        			<label for="email" >
+				        			<strong style="color:red; font-size:18px;">*</strong>Email</label>
+				        			<input type="text" class="form-control" name="email" 
+				        			placeholder="ex: gafanhoto@hotmail.com" required="">
 				        		</div>
 				        	</div>
 				        	<div class="row">
@@ -204,12 +206,12 @@
 				        	</div>
 				        	<div class="row">
 					        	<div class="col-md-6">
-					        		<label for="senha"><strong style="color:red; font-size:20px;">*</strong>Senha</label>
-					        		<input type="password" class="form-control" name="senha"placeholder="Digite uma senha">
+					        		<label for="senha"><strong style="color:red; font-size:18px;">*</strong>Senha</label>
+					        		<input type="password" class="form-control" name="senha"placeholder="Digite uma senha"required="">
 					        	</div>
 					        	<div class="col-md-6">
 					        		<label for="rsenha"><strong style="color:red; font-size:20px;">*</strong>Repita a senha</label>
-					        		<input type="password" class="form-control" name="rsenha" placeholder="Repita a senha"> 
+					        		<input type="password" class="form-control" name="rsenha" placeholder="Repita a senha" required=""> 
 					        	</div>
 					        </div>
 					        <div class="row">
@@ -229,11 +231,11 @@
 				        	<div class="row">
 					        	<div class="col-md-11">
 					        		<label for="email">E-mail</label>
-					        		<input type="text" class="form-control" name="email" placeholder="Seu Email">
+					        		<input type="text" class="form-control" name="email" placeholder="Seu Email" required="">
 					        	</div>
 					        	<div class="col-md-11">
 					        		<label for="seha">Senha</label>
-					        		<input type="password" class="form-control" name="senha" placeholder="Sua Senha"> 
+					        		<input type="password" class="form-control" name="senha" placeholder="Sua Senha"required=""> 
 					        	</div>
 					        </div>
 					       
